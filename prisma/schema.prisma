@@ -6,10 +6,38 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../../generated/prisma"
+  output   = "../node_modules/@prisma-app/client"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model Murgagon {
+  id           Int      @id @default(autoincrement())
+  murgId       String   @unique
+  issuedAt     DateTime @default(now())
+  owner        String   @unique
+  ownerContact String
+  showOwner    Boolean  @default(true)
+  showContact  Boolean  @default(false)
+  Owner        Owner[]
+
+}
+
+model Owner {
+  id         Int      @id @default(autoincrement())
+  murgagonId Int
+  name       String
+  token      String
+  murgagon   Murgagon @relation(fields: [name], references: [owner])
+
+  @@unique([murgagonId, name])
+}
+
+model logins {
+  id      Int      @id @default(autoincrement())
+  token   String
+  expires DateTime
 }

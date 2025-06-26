@@ -1,48 +1,17 @@
-# RJM SvelteKit Template - Prisma
+# Murgagon
 
-This is a GitHub template repository for a SvelteKit Web App running with Prisma.
-It is licensed under GNU's GPL V3.0, but is primarily for personal use.
-This template is modified to have the Prisma ORM installed and given initial configuration. Changes to the Docker files were made to support this
+This website is the directory of all Murgagons. Allowing people to get the information about Murgagons.
 
-A three-stage docker build is used to build the final container. Node packages, a build step, and the final distribution layer.
+_What is a Murgagon?_
+A Murgagon is a physical, hexagonal token which is gifted to people.
+Each Murgagon has a unique ID, which can be entered here to get info on the Murgagon, such as its owner.
+It's owner may also register its Murgagon, and use this site to access unique information.
 
-For the template without Prisma, look [here](https://github.com/RJMurg/SvelteKit-Template).
+## Requirements
 
-## Project Features
-
-- TailwindCSS v4
-- ShadCN (Next)
-- Node Adapter
-- Prisma
-- Built in Containerisation (With Container Health Check)
-
-## Dev Features
-
-- Vitest
-- Playwright E2E Testing
-- ESLint
-- Prettier
-- PR Checks (Vitest, E2E & Test container build)
-- Container build on push to master
-
-## Setup:
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/RJMurg/SvelteKit-Prisma-Template.git
-```
-
-2. Install the dependencies
-
-```bash
-npm install
-```
-
-3. Run the development server
-
-```bash
-npm run dev
-```
-
-You are now ready to develop!
+- [ ] Murgagon shown as 3D object
+- [ ] Landing site
+- [ ] Search by MurgID
+- [ ] Register Murgagon
+- [ ] Login with MurgID and OTP
+- [ ] Murgagon info page
