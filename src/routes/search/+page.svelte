@@ -1,11 +1,14 @@
 <script lang="ts">
-	import type { ActionData } from './$types';
+	import type { PageProps } from './$types';
 	import { enhance } from '$app/forms';
 	import { Button } from '$lib/components/shad/ui/button';
 	import { Input } from '$lib/components/shad/ui/input';
 	import { Card } from '$lib/components/shad/ui/card';
+	import { Canvas, useTask } from '@threlte/core';
+	import { T } from '@threlte/core';
+	import { useGltf } from '@threlte/extras';
 
-	let { data }: { data: ActionData } = $props();
+	let { form }: PageProps = $props();
 </script>
 
 <div class="flex h-screen w-screen flex-col items-center justify-center p-6 text-center">
@@ -16,7 +19,6 @@
 
 		<form
 			class="flex w-full flex-row items-center justify-center text-lg md:w-1/2"
-			action="/search"
 			method="POST"
 			use:enhance
 		>
@@ -26,7 +28,30 @@
 		</form>
 
 		<h1 class="text-red-500">
-			{data?.error}
+			{#if form?.error}
+				{form?.error}
+			{/if}
 		</h1>
 	</Card>
+
+	{#if form?.murgagon}
+		<Card class="mt-8 flex w-full flex-col items-center justify-center p-6 md:w-1/2">
+			<h2 class="text-2xl font-bold">{form?.murgagon.owner}</h2>
+
+			<div class="flex w-full flex-row items-center justify-around">
+				<div class="flex flex-col items-start justify-center text-left">
+					<p class="text-lg"><span class="font-black">MurgID:</span> {form?.murgagon.murgId}</p>
+					<p class="text-lg">
+						<span class="font-black">Issued:</span>
+						{new Date(form?.murgagon.issuedAt).toDateString()}
+					</p>
+					<p class="text-lg">
+						<span class="font-black">Generation:</span>
+						{form?.murgagon.generation}
+					</p>
+				</div>
+				<div class="flex flex-col items-center justify-center"></div>
+			</div>
+		</Card>
+	{/if}
 </div>
