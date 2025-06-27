@@ -3,6 +3,6 @@ import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url ?? __filename);
 
-const { PrismaClient: PrismaClientImpl } = require('@prisma/client');
+const { PrismaClient: PrismaClientImpl } = require('@prisma-app/client');
 
-export class PrismaClient extends (PrismaClientImpl as typeof PrismaClientType) {}
+export class prisma extends (PrismaClientImpl as typeof PrismaClientType) {}
