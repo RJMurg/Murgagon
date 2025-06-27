@@ -5,7 +5,6 @@
 	import { Label } from '$lib/components/shad/ui/label';
 	import * as Dialog from '$lib/components/shad/ui/dialog/index.js';
 	import { CalendarIcon, ChevronRight } from 'lucide-svelte';
-	import QrCode from '@castlenine/svelte-qrcode';
 	import { enhance } from '$app/forms';
 
 	import { type DateValue, DateFormatter, getLocalTimeZone } from '@internationalized/date';

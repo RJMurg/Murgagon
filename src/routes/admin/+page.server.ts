@@ -23,6 +23,7 @@ export const load = (async ({ cookies }) => {
 	}
 
 	if (loggedIn) {
+		// TODO
 	}
 
 	return {

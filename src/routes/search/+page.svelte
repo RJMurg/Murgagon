@@ -4,9 +4,7 @@
 	import { Button } from '$lib/components/shad/ui/button';
 	import { Input } from '$lib/components/shad/ui/input';
 	import { Card } from '$lib/components/shad/ui/card';
-	import { Canvas, useTask } from '@threlte/core';
-	import { T } from '@threlte/core';
-	import { useGltf } from '@threlte/extras';
+	import { Badge } from '$lib/components/shad/ui/badge';
 
 	let { form }: PageProps = $props();
 </script>
@@ -14,7 +12,12 @@
 <div class="flex h-screen w-screen flex-col items-center justify-center p-6 text-center">
 	<Card class="mt-8 flex w-full flex-col items-center justify-center p-6 md:w-1/2">
 		<div class="flex flex-col items-center justify-center">
-			<h1 class="text-4xl font-black md:text-6xl">Find a Murgagon</h1>
+			<h1 class="text-4xl font-black md:text-6xl">
+				Find a Murgagon <Badge variant="warning">Alpha</Badge>
+			</h1>
+			<h1 class="mt-2 text-lg font-light text-neutral-500 md:text-xl">
+				The Murgagon Registry is currently in Alpha. Not all features are available
+			</h1>
 		</div>
 
 		<form
@@ -36,7 +39,7 @@
 
 	{#if form?.murgagon}
 		<Card class="mt-8 flex w-full flex-col items-center justify-center p-6 md:w-1/2">
-			<h2 class="text-2xl font-bold">{form?.murgagon.owner}</h2>
+			<h2 class="text-3xl font-black md:text-6xl">{form?.murgagon.owner}</h2>
 
 			<div class="flex w-full flex-row items-center justify-around">
 				<div class="flex flex-col items-start justify-center text-left">
@@ -50,7 +53,13 @@
 						{form?.murgagon.generation}
 					</p>
 				</div>
-				<div class="flex flex-col items-center justify-center"></div>
+				<div class="flex flex-col items-center justify-center">
+					<img
+						src={'generations/' + form?.murgagon.generation.toLowerCase().replace(' ', '') + '.png'}
+						alt="A Marble Hexagon"
+						class="h-auto w-32 rounded-full"
+					/>
+				</div>
 			</div>
 		</Card>
 	{/if}
