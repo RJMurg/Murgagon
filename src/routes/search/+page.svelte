@@ -25,7 +25,19 @@
 			method="POST"
 			use:enhance
 		>
-			<Input type="text" name="murgID" placeholder="Search by MurgID" />
+			<div
+				class="border-input bg-background dark:bg-input/30 ring-offset-background l flex h-9 min-w-0 items-center justify-center rounded-md rounded-tr-none rounded-br-none border px-3 py-1 font-black shadow-xs transition-[color,box-shadow] outline-none md:text-sm"
+			>
+				M.
+			</div>
+			<Input
+				type="text"
+				name="murgID"
+				id="murgID"
+				placeholder="ABCD"
+				class="w-full rounded-tl-none rounded-bl-none"
+				required
+			/>
 
 			<Button type="submit" variant="secondary" class="ml-4">Search</Button>
 		</form>
