@@ -5,6 +5,7 @@
 	import { Input } from '$lib/components/shad/ui/input';
 	import { Card } from '$lib/components/shad/ui/card';
 	import { Badge } from '$lib/components/shad/ui/badge';
+	import { Search } from 'lucide-svelte';
 
 	let { form }: PageProps = $props();
 </script>
@@ -35,11 +36,11 @@
 				name="murgID"
 				id="murgID"
 				placeholder="ABCD"
-				class="w-full rounded-tl-none rounded-bl-none"
+				class="w-full rounded-none"
 				required
 			/>
 
-			<Button type="submit" variant="secondary" class="ml-4">Search</Button>
+			<Button type="submit" variant="secondary" class="rounded-tl-none rounded-bl-none"><Search /></Button>
 		</form>
 
 		<h1 class="text-red-500">
